@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Poppins:wght@200;300&display=swap");
+*, html {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: black;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  background-color: black;
+  cursor: url(https://abs.twimg.com/emoji/v2/72x72/1f525.png) 10 10, auto;
+}
+
+.text-white {
+  color: whitesmoke;
+}
+
+.css-g0ck5h {
+  padding-top: 115px;
+  padding-bottom: 115px;
+  max-width: 500px;
+  -webkit-margin-start: auto;
+  margin-inline-start: auto;
+  -webkit-margin-end: auto;
+  margin-inline-end: auto;
+}
+
+@-webkit-keyframes example {
+  0% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+  25% {
+    -webkit-transform: rotateY(90deg);
+            transform: rotateY(90deg);
+  }
+  50% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+  75% {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+}
+
+@keyframes example {
+  0% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+  25% {
+    -webkit-transform: rotateY(90deg);
+            transform: rotateY(90deg);
+  }
+  50% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+  75% {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+}
+
+.img {
+  width: 7rem;
+  height: 7rem;
+  cursor: pointer;
+  border-radius: 50%;
+  -webkit-animation-name: example;
+          animation-name: example;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.profile-name {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+}
+
+.profile-name:hover {
+  cursor: url(./fire.gif) 2 2, pointer;
+}
+
+.about {
+  margin: 3rem 0rem;
+}
+
+.about .title {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0.5rem 0rem;
+  font-size: 0.9rem;
+}
+
+.working .title {
+  margin: 3rem 0rem;
+}
+
+.experience {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 2rem 0rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.experience .description {
+  max-width: 350px;
+}
+
+.experience .description .title {
+  margin: 0.1rem 0rem 0.7rem 0rem;
+}
+
+.tools ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.tools li {
+  margin: 0.3rem 0.8rem;
+  color: #919191;
+}
+
+.side-projects {
+  margin: 2rem 0rem;
+}
+
+.projects {
+  margin: 3rem 0rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.projects .description {
+  max-width: 350px;
+}
+
+.projects .description .title {
+  margin: 0.1rem 0rem 0.7rem 0rem;
+}
+
+.links .title {
+  margin: 2rem 0rem;
+}
+
+.links .social-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1rem 0rem;
+}
+
+.links .social-links .name {
+  margin-bottom: 1rem;
+}
+
+.links .social-links .link {
+  display: block;
+  position: relative;
+  left: 6rem;
+}
+
+.links .social-links .link a {
+  color: white;
+  text-decoration: none;
+}
+
+.margin-1 {
+  margin-bottom: 1rem;
+}
+/*# sourceMappingURL=main.css.map */
