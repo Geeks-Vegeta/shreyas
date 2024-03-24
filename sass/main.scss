@@ -176,6 +176,7 @@ hr{
 
 
 .hire-me{
+    margin: 2rem 0rem;
     .container{
         margin: 1rem 0rem;
         width: 22rem;
@@ -220,6 +221,20 @@ hr{
     }
 }
 
+.contact{
+    width: 22rem;
+    margin: 1rem;
+        .container{
+            margin: 0.5rem;
+            width: 22rem;
+            border-radius: 1rem;
+            border-width: 0.1px;
+            padding: 1rem;
+            border: 1px solid #6f70732c;
+    }
+
+}
+
 
 .pixel{
     margin: 1rem;
@@ -250,6 +265,43 @@ hr{
                 text-decoration: none;
             }
         }
+    }
+}
+
+.social-links{
+    ul{
+        list-style-type: none;
+        display: flex;
+        color: #6F7073;
+    }
+    li{
+        margin:0.5rem 0.8rem;
+        font-size: 25px;
+    }
+}
+
+.side-projects{
+    width: 22rem;
+    margin: 2rem;
+    .container{
+        margin: 1rem 0rem;
+        width: 22rem;
+        border-radius: 1rem;
+        border-width: 0.1px;
+        padding: 1rem;
+        border: 1px solid #6f70732c;
+        .heading{
+            display: flex;
+            .logo img{
+                width: 1rem;
+                height: 1rem;
+                margin-right: 1rem;
+            }
+        }
+        p{
+            margin: 0.2rem 0rem;
+        }
+
     }
 }
 
