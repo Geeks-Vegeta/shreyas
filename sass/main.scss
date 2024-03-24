@@ -16,7 +16,7 @@
 }
 body{
     background-color: #101010;
-    cursor: url(https://abs.twimg.com/emoji/v2/72x72/1f525.png) 10 10, auto;
+    // cursor: url(https://abs.twimg.com/emoji/v2/72x72/1f525.png) 10 10, auto;
 
 }
 
@@ -43,18 +43,6 @@ a[href]{
     color: whitesmoke;
 }
   
-
-// .css-g0ck5h {
-//     padding-top: 115px;
-//     padding-bottom: 115px;
-//     max-width: 500px;
-//     display: flex;
-//     flex-direction: column;
-//     -webkit-margin-start: auto;
-//     margin-inline-start: auto;
-//     -webkit-margin-end: auto;
-//     margin-inline-end: auto;
-// }
 
 .css-g0ck5h {
     align-items: center;
@@ -90,7 +78,7 @@ a[href]{
     height: 3rem;
     cursor: pointer;
     border-radius: 50%;
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 23%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(26, 26, 56) 23%, rgb(20, 39, 43) 100%);
     // animation-name: example;
     animation-duration: 5s;
     animation-iteration-count: infinite;
@@ -207,7 +195,6 @@ hr{
 
 .resume{
     display: flex;
-    color: red;
     justify-content: space-between;
     .checkout{
         width: 12rem;

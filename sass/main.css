@@ -11,7 +11,6 @@
 
 body {
   background-color: #101010;
-  cursor: url(https://abs.twimg.com/emoji/v2/72x72/1f525.png) 10 10, auto;
 }
 
 .text-white {
@@ -78,7 +77,7 @@ a[href] {
   height: 3rem;
   cursor: pointer;
   border-radius: 50%;
-  background: linear-gradient(90deg, rgb(2, 0, 36) 0%, rgb(9, 9, 121) 23%, rgb(0, 212, 255) 100%);
+  background: linear-gradient(90deg, rgb(2, 0, 36) 0%, rgb(26, 26, 56) 23%, rgb(20, 39, 43) 100%);
   animation-duration: 5s;
   animation-iteration-count: infinite;
 }
@@ -186,7 +185,6 @@ hr {
 
 .resume {
   display: flex;
-  color: red;
   justify-content: space-between;
 }
 .resume .checkout {
