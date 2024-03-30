@@ -1,27 +1,80 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-// font-family: 'Open Sans', sans-serif;
-// font-family: 'Poppins', sans-serif;
-// https://abs.twimg.com/emoji/v2/72x72/1f525.png    
-// https://github.com/Geeks-Vegeta/shreyas/blob/main/sass/fire.gif
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import 'colors';
+@import'_mixins';
 
 *,html{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #101010;
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-
+    background-color: $background-color;
+    
 }
 body{
-    background-color: #101010;
-    // cursor: url(https://abs.twimg.com/emoji/v2/72x72/1f525.png) 10 10, auto;
+    background-color: $background-color;
 
 }
+.switch{
+    width: 22rem;
+    display: flex;
+    justify-content: flex-end;
+    margin: 1rem 0rem;
+}
+
+
+/* Hide the checkbox */
+input[type="checkbox"] {
+    display: none;
+  }
+  
+  /* Style the label */
+  .toggle-label {
+    display: inline-block;
+    width: 60px; /* Width of the toggle */
+    height: 30px; /* Height of the toggle */
+    background-color: $toggle-background-color;
+    border-radius: 15px; /* Border radius of the toggle */
+    position: relative;
+    cursor: pointer;
+  }
+  
+  /* Style the code icon */
+  .toggle-label i {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    background-color: transparent;
+  }
+  
+  /* Style the switch when toggled */
+  input:checked + .toggle-label {
+    background-color: $toggle-after-checked;
+  }
+  
+  /* Move the code icon when the switch is toggled */
+  input:checked + .toggle-label i {
+    left: calc(100% - 25px);
+  }
+  
+  /* Style the rounded circle */
+  .toggle-label::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 3px;
+  }
+  
+  /* Transition effect */
+  .toggle-label,
+  .toggle-label i {
+    transition: all 0.3s ease;
+  }
+  
 
 .text-white{
-    color: whitesmoke;
+    color: $page1-heading-text-color;
 }
 
 .fire-gif{
@@ -30,18 +83,48 @@ body{
 
 }
 
-h2{
-    font-size: 18px;
-    font-weight: 500;
-  }
-  
-  p{
-    font-size: 14px;
-  }
+#page1{
+    h2{
+        font-size: 18px;
+        font-weight: 500;
+        @include page1-font
+      }
+      p{
+        font-size: 14px;
+        @include page1-font
+      }
+
+}
+
+
 
 a[href]{
-    color: whitesmoke;
+    color: $page1-heading-text-color;
 }
+
+.css-g0ck5htoggle {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: -moz-min-content;
+    height: min-content;
+    justify-content: flex-start;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding: 1rem 0rem
+  }
+  
+
+  /* Style the pages */
+.page {
+    display: none;
+  }
+  
+  .page.active {
+    display: block;
+  }
   
 
 .css-g0ck5h {
@@ -55,21 +138,14 @@ a[href]{
     overflow: hidden;
     position: relative;
     width: 100%;
-    padding: 5rem 0rem
+    padding: 1rem 0rem
   }
   
   .about{
-    width: 22rem;
+    width: 25rem;
     text-wrap: wrap;
     text-align: start;
-  }
-
-@keyframes example {
-    0%   { transform: rotateX(0deg);}
-    25%  { transform: rotateY(90deg)}
-    50%  { transform: rotateX(0deg)}
-    75%  {transform: rotateY(180deg)}
-    100% {transform: rotateX(0deg)}
+    @include page1-font
   }
 
 
@@ -88,12 +164,14 @@ a[href]{
 }
 
 .experience-v1{
+    @include page1-font;
     margin: 1rem 0rem;
-    width: 22rem;
+    width: 25rem;
     border-radius: 1rem;
     border-width: 0.1px;
     padding: 1rem;
-    border: 1px solid #6f70732c;
+    
+    border: 1px solid $container-border-color;
     .work-title, .work-year{
         margin-bottom: 3px;
     }
@@ -102,20 +180,22 @@ a[href]{
     }
     .hyper-line{
         margin: 10px 0px;
-        border-color: #6f707362;
+        border-color: $hyper-line-color;
     }
 }
 
 
 hr{
     margin: 10px 0px;
-        border-color: #6f707362;
+        border-color: $hyper-line-color;
 }
 
 .profile-name{
-    width: 22rem;
+    width: 25rem;
     display: flex;
-    justify-content: space-around;
+    .logo{
+        margin-right: 1rem;
+    }
 }
 
 
@@ -132,7 +212,7 @@ hr{
     .title{
         margin: 1rem 0rem;
     }
-    width: 22rem;
+    width: 25rem;
     margin: 2rem;
 }
 .experience{
@@ -155,7 +235,7 @@ hr{
     }
     li{
         margin:0.3rem 0.8rem;
-        color: #919191;
+        color: $tools-color;
         font-size: 10px;
     }
 }
@@ -166,18 +246,18 @@ hr{
     margin: 2rem 0rem;
     .container{
         margin: 1rem 0rem;
-        width: 22rem;
+        width: 25rem;
         border-radius: 1rem;
         border-width: 0.1px;
         padding: 1rem;
-        border: 1px solid #6f70732c;
+        border: 1px solid $container-border-color;
         ul{
             display: flex;
             justify-content: flex-start;
             flex-direction: column;
             list-style-type: circle;
             padding: 1rem;
-            color: wheat;
+            color: $hire-me-ul-color;
             li>p{
                 margin: 1px 0rem;
                 font-size: 0.8rem;
@@ -193,10 +273,11 @@ hr{
 }
 
 .resume{
+    @include page1-font;
     display: flex;
     justify-content: space-between;
     .checkout{
-        width: 12rem;
+        width: 15rem;
         p{
             font-size: 0.8rem;
         }
@@ -208,15 +289,16 @@ hr{
 }
 
 .contact{
-    width: 22rem;
+    @include page1-font;
+    width: 25rem;
     margin: 1rem;
         .container{
-            margin: 0.5rem;
-            width: 22rem;
+            margin: 0.5rem 0rem;
+            width: 25rem;
             border-radius: 1rem;
             border-width: 0.1px;
             padding: 1rem;
-            border: 1px solid #6f70732c;
+            border: 1px solid $container-border-color;
     }
 
 }
@@ -247,7 +329,7 @@ hr{
            position: relative;
            left: 2rem;
             a{
-                color: white;
+                color: $link-social-link-color;
                 text-decoration: none;
             }
         }
@@ -258,7 +340,7 @@ hr{
     ul{
         list-style-type: none;
         display: flex;
-        color: #6F7073;
+        color: $social-links-ul;
     }
     li{
         margin:0.5rem 0.8rem;
@@ -267,15 +349,16 @@ hr{
 }
 
 .side-projects{
-    width: 22rem;
+    @include page1-font;
+    width: 25rem;
     margin: 2rem;
     .container{
         margin: 1rem 0rem;
-        width: 22rem;
+        width: 25rem;
         border-radius: 1rem;
         border-width: 0.1px;
         padding: 1rem;
-        border: 1px solid #6f70732c;
+        border: 1px solid $container-border-color;
         .heading{
             display: flex;
             .logo img{
@@ -293,23 +376,22 @@ hr{
 
 .ending-greetings{
     text-align: center;
-    color:#919191;
+    color:$ending-greeting-color;
     margin: 1rem 0rem;
 }
 
 .footer-ending{
     font-size: x-small;
-    color: red;
 }
 
 .skills{
     ul{
         list-style-type: none;
         display: flex;
-        color: #6F7073;
+        color: $skills-ul-color;
     }
     li{
-        margin:0.5rem 0.9rem;
+        margin:0.5rem 0.8rem;
         font-size: 25px;
     }
 }
@@ -317,3 +399,526 @@ hr{
 .margin-1{
     margin-bottom: 1rem;
 }
+
+
+
+
+/* page 2 */
+
+#page2{
+    margin: 3rem 0rem;
+    width: 50rem;
+    @include page2-font;
+}
+
+
+
+@keyframes spinner-s {
+    0% {
+      background-color: aqua;
+      transform: rotate(10deg);
+    }
+    10% {
+        background-color: blue;
+        transform: rotate(40deg);
+
+    }
+    20%{
+        background-color: rgb(168, 26, 156);
+        transform: rotate(70deg);
+
+    }
+    30%{
+        background-color: rgb(113, 223, 195);
+        transform: rotate(-70deg);
+    }
+    40%{
+        background-color: rgb(13, 38, 66);
+        transform: rotate(-20deg);
+
+    }
+    50%{
+        background-color: rgb(255, 38, 0);
+        transform: rotate(50deg);
+
+    }
+    60%{
+        background-color: rgb(231, 255, 15);
+        transform: rotate(90deg);
+
+    }
+    70%{
+        background-color: rgb(190, 113, 241);
+        transform: rotate(-50deg);
+
+    }
+    80%{
+        background-color: rgb(27, 179, 218);
+        transform: rotate(-90deg);
+
+    }
+    90%{
+        background-color: rgb(150, 21, 27);
+        transform: rotate(-30deg);
+
+    }
+    100%{
+        background-color: rgb(75, 236, 169);
+        transform: rotate(-10deg);
+
+    }
+
+  }
+
+@keyframes ascii-color {
+    0%{
+        color: aqua;
+    }
+    10%{
+        color: rgb(30, 78, 78);
+
+    }
+    20%{
+        color: rgba(0, 255, 136, 0.76);
+    }
+    30%{
+        color: rgb(131, 1, 1);
+    }
+    40%{
+        color: rgb(19, 147, 170);
+    }
+    50%{
+        color: rgb(247, 200, 71);
+    }
+    60%{
+        color: rgba(20, 194, 78, 0.651);
+    }
+    70%{
+        color: rgb(93, 240, 93);
+    }
+    80%{
+        color: rgb(32, 1, 18);
+    }
+    90%{
+        color: rgb(190, 5, 113);
+    }
+    100%{
+        color: blue;
+    }
+    
+}
+
+.red{
+    color: $red;
+}
+
+#linux-ui{
+    margin: 1rem;
+
+}
+
+.sample-cursor{
+    margin: 1rem;
+    background-color: $sample-cursor;
+}
+
+#cursor_ui{
+    font-size: 1rem;
+    max-height: 20rem;
+    min-height: 1rem;
+    .green{
+        color: $green;
+    }
+    
+    .white{
+        color: $white;
+    
+    }
+    .blue{
+        color: $blue;
+    
+    }
+}
+
+
+pre{
+    // font-size: 0.6rem;
+    width: 10rem;
+}
+
+.accii{
+    animation: ascii-color 2s infinite;
+}
+
+.commands{
+    margin: 1rem;
+    color: $white;
+
+}
+
+.commands-heading{
+    font-size: 1rem;
+    font-weight: 1000;
+}
+
+.list{
+    margin: 1rem 1rem;
+    width: 25rem;
+
+}
+
+.comm{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.command-desc{
+    color: aqua;
+
+}
+
+#cursor_ui{
+    max-height: 20rem;
+    min-height: 1rem;
+}
+
+.red{
+    color: $red;
+}
+
+.joke{
+    max-height: 10rem;
+    width: 30rem;
+    color: $white;
+}
+
+.spinner-line{
+    width: 1px;
+    margin: 0rem 1rem;
+    height: 1.4rem;
+    padding: 1px;
+    color: $spinner-line-color;
+    transform: rotate(10deg);
+    background-color:$spinner-line-bg;
+    animation: spinner-s 0.5s infinite;
+}
+
+
+.progressbarWrapper {
+    height: 20px;
+    width: 300px;
+    max-width: 80%;
+    display: block;
+    background: transparent;
+    padding: 3px;
+    box-shadow: inset 0 -1px 1px transparent;
+  }
+  
+  #greenBar {
+    display: block;
+    height: 100%;
+    width: 0px;
+    background-color: rgb(43, 194, 83);
+    background-image: linear-gradient(
+      center bottom,
+      rgb(43, 194, 83) 37%,
+      rgb(84, 240, 84) 69%
+    );
+    position: relative;
+    overflow: hidden;
+    font-size: 15px;
+    text-align: center;
+    color: $white;
+    transition: all 700ms ease;
+  }
+
+.spinner{
+    display: flex;
+    display: none;
+}
+
+.sp{
+    margin: 0 0.5rem;
+    font-size: 1rem;
+    color: rgb(239, 245, 245);
+}
+
+
+
+.linux-text{
+    width: 10rem ;
+    padding: 0.5rem;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: $white;
+    font-size: 1rem;
+
+}
+
+input {
+    caret-color: $input-carter-color;
+  }
+
+input[type="text"]{
+    color: $input-text-color;
+}
+
+
+.img-meme{
+    cursor: pointer;
+    width: 15rem;
+    height: 10rem;
+}
+
+
+.files{
+    ul{
+        display: flex;
+    }
+    li{
+        margin: 0rem 1rem;
+        list-style-type: none;
+        color: rgb(152, 48, 218);
+    }
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  }
+  
+  /* Modal Content (image) */
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+  }
+  
+  /* Caption of Modal Image */
+  #caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: $caption-color;
+    padding: 10px 0;
+    height: 150px;
+  }
+  
+  /* Add Animation */
+  .modal-content, #caption {  
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+  
+  @-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+  }
+  
+  @keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+  }
+  
+  /* The Close Button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+.sample-cursor{
+    margin: 1rem;
+}
+
+/* For mobile devices and tablets */
+@media only screen and (max-width: 1023px) {
+
+    .profile-name{
+        width: 22rem;
+        display: flex;
+        justify-content: space-around;
+    }   
+    .about{
+        @include page1-font;
+        width: 22rem;
+        text-wrap: wrap;
+        text-align: start;
+      }
+     
+      .skills{
+        ul{
+            list-style-type: none;
+            display: flex;
+            color: #6F7073;
+        }
+        li{
+            margin:0.5rem 0.9rem;
+            font-size: 25px;
+        }
+    }
+    .working{
+        @include page1-font;
+        .title{
+            margin: 1rem 0rem;
+        }
+        width: 22rem;
+        margin: 2rem;
+    }
+    .experience-v1{
+        @include page1-font;
+        margin: 1rem 0rem;
+        width: 22rem;
+        border-radius: 1rem;
+        border-width: 0.1px;
+        padding: 1rem;
+        border: 1px solid #6f70732c;
+        .work-title, .work-year{
+            margin-bottom: 3px;
+        }
+        .work-description{
+            margin-top: 1rem;
+        }
+        .hyper-line{
+            margin: 10px 0px;
+            border-color: #6f707362;
+        }
+    }
+    .side-projects{
+        @include page1-font;
+        width: 22rem;
+        margin: 2rem;
+        .container{
+            margin: 1rem 0rem;
+            width: 22rem;
+            border-radius: 1rem;
+            border-width: 0.1px;
+            padding: 1rem;
+            border: 1px solid #6f70732c;
+            .heading{
+                display: flex;
+                .logo img{
+                    width: 1rem;
+                    height: 1rem;
+                    margin-right: 1rem;
+                }
+            }
+            p{
+                margin: 0.2rem 0rem;
+            }
+    
+        }
+    }
+
+    .hire-me{
+        @include page1-font;
+        margin: 2rem 0rem;
+        .container{
+            margin: 1rem 0rem;
+            width: 22rem;
+            border-radius: 1rem;
+            border-width: 0.1px;
+            padding: 1rem;
+            border: 1px solid #6f70732c;
+            ul{
+                display: flex;
+                justify-content: flex-start;
+                flex-direction: column;
+                list-style-type: circle;
+                padding: 1rem;
+                color: wheat;
+                li>p{
+                    margin: 1px 0rem;
+                    font-size: 0.8rem;
+                }
+            }
+            .work-together{
+                margin: 1rem 0rem;
+                p{
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+
+    .resume{
+        @include page1-font;
+        display: flex;
+        justify-content: space-between;
+        .checkout{
+            width: 12rem;
+            p{
+                font-size: 0.8rem;
+            }
+        }
+        .download-button{
+            font-size: 1.5em;
+            text-align: center;
+        }
+    }
+    .contact{
+        @include page1-font;
+        width: 22rem;
+        margin: 1rem;
+            .container{
+                margin: 0.5rem;
+                width: 22rem;
+                border-radius: 1rem;
+                border-width: 0.1px;
+                padding: 1rem;
+                border: 1px solid $container-border-color;
+        }
+    
+    }
+    .social-links{
+        ul{
+            list-style-type: none;
+            display: flex;
+            color: #6F7073;
+        }
+        li{
+            margin:0.5rem 0.8rem;
+            font-size: 25px;
+        }
+    }
+    .ending-greetings{
+        @include page1-font;
+        text-align: center;
+        color:#919191;
+        margin: 1rem 0rem;
+    }
+    
+    .footer-ending{
+        @include page1-font;
+        font-size: x-small;
+    }
+  }

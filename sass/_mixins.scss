@@ -1,0 +1,11 @@
+@mixin page1-font{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+@mixin page2-font{
+    font-family: "Ubuntu", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
