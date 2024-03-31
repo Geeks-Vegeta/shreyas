@@ -524,7 +524,7 @@ hr{
 
 #cursor_ui{
     font-size: 1rem;
-    max-height: 20rem;
+    max-height: 40rem;
     min-height: 1rem;
     .green{
         color: $green;
@@ -580,7 +580,7 @@ pre{
 }
 
 #cursor_ui{
-    max-height: 20rem;
+    max-height: 40rem;
     min-height: 1rem;
 }
 
@@ -758,6 +758,22 @@ input[type="text"]{
 
 .sample-cursor{
     margin: 1rem;
+    background-color: transparent;
+}
+
+
+.experience-projects{
+    margin: 2rem 0rem;
+    display: flex;
+    justify-content: space-between;
+    .title a[href]{
+        color: rgb(62, 64, 172);
+        text-decoration: none;
+    }
+    .description{
+        width: 30rem;
+        color: rgb(214, 214, 214);
+    }
 }
 
 /* For mobile devices and tablets */
