@@ -1,53 +1,99 @@
 const about_content =
   "I'm Shreyas. I enjoy building dynamic, creative products from start to finish. Focused on developing intuitive experiences that constantly grow and improve based on user metrics. Always shipping";
 
+const projects_content = [
+  {
+    title: "All In One App",
+    description:
+      "Here is a solution for getting all tools in one place - This tool contain all things including images. Generate/Decode QR Code Short URLs",
+    url: "https://aioapp.netlify.app/",
+  },
+  {
+    title: "ColorPicker",
+    description:
+      "This tool is really great at for creating and getting color Palettes- Create Color Palettes. Getting top famous Color Palettes for artist and designer.",
+    url: "https://color-pickerio.netlify.app/",
+  },
+  {
+    title: "Quote App",
+    description: "Small social media application",
+    url: "https://quoteser.netlify.app/",
+  },
+];
 
-const projects_content=[
-    {
-        "title": "All In One App",
-        "description": "Here is a solution for getting all tools in one place - This tool contain all things including images. Generate/Decode QR Code Short URLs",
-        "url":"https://aioapp.netlify.app/"
-    },
-    {
-        "title": "ColorPicker",
-        "description": "This tool is really great at for creating and getting color Palettes- Create Color Palettes. Getting top famous Color Palettes for artist and designer.",
-        "url":"https://color-pickerio.netlify.app/",
-    },
-    {
-        "title": "Quote App",
-        "description": "Small social media application",
-        "url":"https://quoteser.netlify.app/"
-    }
+const experience_content = [
+  {
+    title: "Senior Backend Developer (Jaaga.ai)",
+    description:
+      "Implement database solutions, managing data modeling, optimization, and integration with third-party services. Participate in code reviews, providing valuable feedback to team members to enhance overall code quality.",
+    url: "https://aioapp.netlify.app/",
+  },
+  {
+    title: "Backend Developer (Stareoutgames)",
+    description:
+      "Collaborate closely with cross-functional teams including front-end developers, UI/UX designers, and product managers to understand requirements and deliver high-quality solutions..",
+    url: "https://color-pickerio.netlify.app/",
+  },
+  {
+    title: "Backend Developer (Meet)",
+    description:
+      "Collaborated with a cross-functional team to define project requirements, scope, and timelines. Implemented RESTful APIs, optimized database queries, and improved overall performance.",
+    url: "https://quoteser.netlify.app/",
+  },
+  {
+    title: "Backend Developer (SirpiDataScience)",
+    description:
+      "Deployed and managed multiple applications using different frameworks like Flask and Express. Building and managing restful API's for Fronted, Also worked in chat bot development process",
+    url: "https://quoteser.netlify.app/",
+  },
+];
 
-]
+const social_links = [
+  {
+    name: "github",
+    url: "https://github.com/Geeks-Vegeta",
+  },
+  {
+    name: "linkedin",
+    url: "https://www.linkedin.com/in/shreyas-mohite-6855621a5/",
+  },
+  {
+    name: "email",
+    url: "mailto:shreyasmohite30@gmail.com",
+  },
+  {
+    name: "telegram",
+    url: "https://t.me/Shreyasmohite_bot",
+  },
+];
 
-
-const experience_content=[
-    {
-        "title": "Senior Backend Developer (Jaaga.ai)",
-        "description": "Implement database solutions, managing data modeling, optimization, and integration with third-party services. Participate in code reviews, providing valuable feedback to team members to enhance overall code quality.",
-        "url":"https://aioapp.netlify.app/"
-    },
-    {
-        "title": "Backend Developer (Stareoutgames)",
-        "description": "Collaborate closely with cross-functional teams including front-end developers, UI/UX designers, and product managers to understand requirements and deliver high-quality solutions..",
-        "url":"https://color-pickerio.netlify.app/",
-    },
-    {
-        "title": "Backend Developer (Meet)",
-        "description": "Collaborated with a cross-functional team to define project requirements, scope, and timelines. Implemented RESTful APIs, optimized database queries, and improved overall performance.",
-        "url":"https://quoteser.netlify.app/"
-    },
-    {
-        "title": "Backend Developer (SirpiDataScience)",
-        "description": "Deployed and managed multiple applications using different frameworks like Flask and Express. Building and managing restful API's for Fronted, Also worked in chat bot development process",
-        "url":"https://quoteser.netlify.app/"
-    }
-
-]
-
-
-
+const skills_content = [
+  {
+    name: "aws",
+    percent_bar: "[#####.....]",
+    percent: "50%",
+  },
+  {
+    name: "reactjs",
+    percent_bar: "[######....]",
+    percent: "60%",
+  },
+  {
+    name: "nodejs",
+    percent_bar: "[######....]",
+    percent: "60%",
+  },
+  {
+    name: "python",
+    percent_bar: "[#######...]",
+    percent: "70%",
+  },
+  {
+    name: "docker",
+    percent_bar: "[#####.....]",
+    percent: "50%",
+  },
+];
 
 document.getElementById("toggle").addEventListener("change", function () {
   var page1 = document.getElementById("page1");
@@ -106,10 +152,12 @@ node.addEventListener("keydown", function (ed) {
 node.addEventListener("keyup", function (event) {
   let command_list = [
     "show -n joke",
+    "show contacts",
     "cat projects.txt",
     "show -n meme",
     "quit",
     "cat about.txt",
+    "show resume",
     "cat experiences.txt",
     "cat skills.txt",
   ];
@@ -177,7 +225,7 @@ node.addEventListener("keyup", function (event) {
           write_punchline = "";
           break;
         case "show -n joke":
-          sp.innerHTML = "New joke is arriving,Please wait.";
+          sp.innerHTML = "New joke is arriving,please wait.";
 
           fetch(`https://joke.deno.dev/`)
             .then((data) => {
@@ -191,7 +239,7 @@ node.addEventListener("keyup", function (event) {
           break;
 
         case "show -n meme":
-          sp.innerHTML = "New meme is arriving,Please wait.";
+          sp.innerHTML = "New meme is arriving,please wait.";
 
           fetch(`https://meme-api.com/gimme`)
             .then((data) => {
@@ -200,7 +248,7 @@ node.addEventListener("keyup", function (event) {
             .then((actdata) => {
               if (actdata["code"] == 403) {
                 write_setup = "Image have private access,";
-                write_punchline = "Please try again";
+                write_punchline = "please try again";
               } else {
                 action = "meme";
                 let img = actdata["preview"];
@@ -214,13 +262,32 @@ node.addEventListener("keyup", function (event) {
 
         case "cat projects.txt":
           action = "project";
-          sp.innerHTML = "loading projects,Please wait.";
+          sp.innerHTML = "loading projects,please wait.";
+
+          break;
+
+        case "show contacts":
+          action = "contacts";
+          sp.innerHTML = "loading contacts,please wait.";
 
           break;
 
         case "cat experiences.txt":
           action = "experience";
-          sp.innerHTML = "loading experience,Please wait.";
+          sp.innerHTML = "loading experience,please wait.";
+
+          break;
+
+        case "cat skills.txt":
+          action = "skills";
+          sp.innerHTML = "loading skills,please wait.";
+
+          break;
+
+        case "show resume":
+          action = "resume";
+          sp.innerHTML =
+            "loading resume,please wait it will redirect you on new page.";
 
           break;
 
@@ -277,7 +344,6 @@ node.addEventListener("keyup", function (event) {
 
         new_div.appendChild(input_span);
 
-
         switch (action) {
           case "meme":
             c_div = document.createElement("div");
@@ -318,55 +384,112 @@ node.addEventListener("keyup", function (event) {
             break;
 
           case "project":
+            projects_content.map((data, idx) => {
+              c_div = document.createElement("div");
+              c_div.setAttribute("class", "experience-projects");
 
+              let title = document.createElement("div");
+              title.setAttribute("class", "title");
+              let title_link = document.createElement("a");
+              title_link.setAttribute("href", data.url);
+              title_link.innerText = data.title;
+              title.appendChild(title_link);
 
-            projects_content.map((data,idx)=>{
-                c_div = document.createElement("div");
-                c_div.setAttribute("class", "experience-projects");
+              let description = document.createElement("div");
+              description.setAttribute("class", "description");
+              let description_text = document.createElement("p");
+              description_text.innerText = data.description;
+              description.appendChild(description_text);
 
-                let title = document.createElement("div");
-                title.setAttribute("class", "title");
-                let title_link = document.createElement("a");
-                title_link.setAttribute("href", data.url);
-                title_link.innerText =data.title
-                title.appendChild(title_link)
-
-                let description = document.createElement("div");
-                description.setAttribute("class", "description");
-                let description_text = document.createElement("p");
-                description_text.innerText = data.description;
-                description.appendChild(description_text);
-
-                c_div.appendChild(title)
-                c_div.appendChild(description)
-                new_div.appendChild(c_div);
-            })
+              c_div.appendChild(title);
+              c_div.appendChild(description);
+              new_div.appendChild(c_div);
+            });
 
             break;
-          
-          case "experience":
 
-          experience_content.map((data,idx)=>{
+          case "contacts":
+            console.log("con");
             c_div = document.createElement("div");
-            c_div.setAttribute("class", "experience-projects");
-
-            let title = document.createElement("div");
-            title.setAttribute("class", "title");
-            let title_link = document.createElement("a");
-            title_link.setAttribute("href", data.url);
-            title_link.innerText =data.title
-            title.appendChild(title_link)
-
-            let description = document.createElement("div");
-            description.setAttribute("class", "description");
-            let description_text = document.createElement("p");
-            description_text.innerText = data.description;
-            description.appendChild(description_text);
-
-            c_div.appendChild(title)
-            c_div.appendChild(description)
+            c_div.setAttribute("class", "linux_contacts");
+            let ul = document.createElement("ul");
+            c_div.appendChild(ul);
+            social_links.map((data, idx) => {
+              let li = document.createElement("li");
+              let li_a = document.createElement("a");
+              li_a.setAttribute("target", "_blank");
+              li_a.setAttribute("href", data.url);
+              li_a.innerText = data.name;
+              li.appendChild(li_a);
+              ul.appendChild(li);
+            });
             new_div.appendChild(c_div);
-        })
+
+            break;
+
+          case "experience":
+            experience_content.map((data, idx) => {
+              c_div = document.createElement("div");
+              c_div.setAttribute("class", "experience-projects");
+
+              let title = document.createElement("div");
+              title.setAttribute("class", "title");
+              let title_link = document.createElement("a");
+              title_link.setAttribute("href", data.url);
+              title_link.innerText = data.title;
+              title.appendChild(title_link);
+
+              let description = document.createElement("div");
+              description.setAttribute("class", "description");
+              let description_text = document.createElement("p");
+              description_text.innerText = data.description;
+              description.appendChild(description_text);
+
+              c_div.appendChild(title);
+              c_div.appendChild(description);
+              new_div.appendChild(c_div);
+            });
+            break;
+
+          case "resume":
+            c_div = document.createElement("div");
+            let li_a = document.createElement("a");
+            li_a.setAttribute("target", "_blank");
+            li_a.setAttribute("href", "./public/SHREYAS_MOHITE_RESUME.pdf");
+            li_a.click();
+            new_div.appendChild(c_div);
+            break;
+          case "skills":
+            c_div = document.createElement("div");
+            c_div.setAttribute("class", "linux_skills");
+
+            skills_content.map((data, idx) => {
+              let skill_tag = document.createElement("div");
+              skill_tag.setAttribute("class", "skill-tags");
+              c_div.appendChild(skill_tag);
+
+              let skill_name = document.createElement("div");
+              skill_name.setAttribute("class", "name");
+              skill_name.innerText = data.name;
+              skill_tag.appendChild(skill_name);
+
+              let percentage = document.createElement("div");
+              percentage.setAttribute("class", "percentage");
+              skill_tag.appendChild(percentage);
+
+              let percent_bar = document.createElement("span");
+              percent_bar.setAttribute("class", "percent-bar");
+              percent_bar.innerText = data.percent_bar;
+
+              let percent = document.createElement("span");
+              percent.setAttribute("class", "percent");
+              percent.innerText = data.percent;
+
+              percentage.appendChild(percent_bar);
+              percentage.appendChild(percent);
+            });
+
+            new_div.appendChild(c_div);
             break;
 
           default:

@@ -576,6 +576,7 @@ pre{
 
 .command-desc{
     color: aqua;
+    width: 12rem;
 
 }
 
@@ -684,6 +685,50 @@ input[type="text"]{
         color: rgb(152, 48, 218);
     }
 }
+
+.linux_contacts{
+    ul{
+        display: flex;
+    }
+    li a[href]{
+        text-decoration: none;
+        margin: 0rem 1rem;
+        list-style-type: none;
+        color: rgb(119, 103, 212);
+        cursor: pointer;
+        &:hover{
+            color: rgb(228, 217, 235);
+            text-decoration: underline;
+        }
+    }
+   
+}
+
+.linux_skills{
+    width: 15rem;
+    .skill-tags{
+        margin: 0.5rem 0rem;
+        display: flex;
+        margin-left: 1rem;
+        justify-content: space-between;
+        .name{
+            color: greenyellow;
+        }
+        .percentage{
+            width: 4rem;
+            align-items: flex-start;
+            .percent-bar{
+                color: aqua;
+            }
+            .percent{
+                color: green;
+            }
+        }
+       
+
+    }
+}
+
 
 /* The Modal (background) */
 .modal {
