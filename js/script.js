@@ -16,7 +16,7 @@ const projects_content = [
   },
   {
     title: "Quote App",
-    description: "Small social media application",
+    description: "A quote application offers inspiring, motivational, or thought-provoking quotes, often categorized, to uplift and engage users' spirits daily.",
     url: "https://quoteser.netlify.app/",
   },
 ];
@@ -98,13 +98,16 @@ const skills_content = [
 document.getElementById("toggle").addEventListener("change", function () {
   var page1 = document.getElementById("page1");
   var page2 = document.getElementById("page2");
+  let modeText = document.getElementById("mode");
 
   if (this.checked) {
     page1.classList.remove("active");
     page2.classList.add("active");
+    modeText.innerText="Dev Mode";
   } else {
     page1.classList.add("active");
     page2.classList.remove("active");
+    modeText.innerText="Testimonial";
   }
 });
 
@@ -453,10 +456,14 @@ node.addEventListener("keyup", function (event) {
 
           case "resume":
             c_div = document.createElement("div");
-            let li_a = document.createElement("a");
-            li_a.setAttribute("target", "_blank");
-            li_a.setAttribute("href", "./public/SHREYAS_MOHITE_RESUME.pdf");
-            li_a.click();
+            let popup = window.open("./public/SHREYAS_MOHITE_RESUME.pdf", "_blank");
+            if(popup===null){
+              alert("The pop-up was blocked. Please enable pop-ups for this site to access the content.")
+            }
+            // let li_a = document.createElement("a");
+            // li_a.setAttribute("target", "_blank");
+            // li_a.setAttribute("href", "./public/SHREYAS_MOHITE_RESUME.pdf");
+            // li_a.click();
             new_div.appendChild(c_div);
             break;
           case "skills":

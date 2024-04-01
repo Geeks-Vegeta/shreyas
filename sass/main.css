@@ -15,7 +15,20 @@ body {
   width: 22rem;
   display: flex;
   justify-content: flex-end;
-  margin: 1rem 0rem;
+  margin-top: 1rem;
+}
+
+.switch-mode {
+  color: white;
+  width: 22rem;
+  font-size: 8px;
+  display: flex;
+  margin: 0.3rem 0rem;
+  justify-content: flex-end;
+  margin-right: 1rem;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 /* Hide the checkbox */
