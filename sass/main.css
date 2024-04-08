@@ -90,7 +90,7 @@ input:checked + .toggle-label i {
   height: 25px;
 }
 
-#page1 h2, #page1 h1 {
+#page1 h1 {
   font-size: 18px;
   font-weight: 500;
   font-family: "Inter", sans-serif;
