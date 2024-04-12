@@ -180,6 +180,15 @@ a[href]{
     border-radius: 1rem;
     border-width: 0.1px;
     padding: 1rem;
+    .heading{
+        display: flex;
+        align-items: center;
+        .logo img{
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-right: 0.5rem;
+        }
+    }
     
     border: 1px solid $container-border-color;
     .work-title, .work-year{
@@ -351,6 +360,7 @@ hr{
         list-style-type: none;
         display: flex;
         color: $social-links-ul;
+        justify-content: center;
     }
     li{
         margin:0.5rem 0.8rem;
