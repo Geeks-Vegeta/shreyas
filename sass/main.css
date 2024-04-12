@@ -179,11 +179,11 @@ a[href] {
   padding: 1rem;
   border: 1px solid rgba(111, 112, 115, 0.1725490196);
 }
-.experience-v1 .heading {
+.experience-v1 .work-title > .heading {
   display: flex;
   align-items: center;
 }
-.experience-v1 .heading .logo img {
+.experience-v1 .work-title > .heading .logo img {
   width: 1.5rem;
   height: 1.5rem;
   margin-right: 0.5rem;
@@ -651,6 +651,16 @@ input[type=text] {
   color: rgb(152, 48, 218);
 }
 
+.heading {
+  display: flex;
+  align-items: center;
+}
+.heading .logo img {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+}
+
 .linux_contacts ul {
   display: flex;
 }
@@ -821,11 +831,11 @@ input[type=text] {
     padding: 1rem;
     border: 1px solid rgba(111, 112, 115, 0.1725490196);
   }
-  .experience-v1 .heading {
+  .experience-v1 .work-title > .heading {
     display: flex;
     align-items: center;
   }
-  .experience-v1 .heading .logo img {
+  .experience-v1 .work-title > .heading .logo img {
     width: 1.5rem;
     height: 1.5rem;
     margin-right: 0.5rem;

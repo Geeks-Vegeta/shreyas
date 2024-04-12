@@ -180,7 +180,7 @@ a[href]{
     border-radius: 1rem;
     border-width: 0.1px;
     padding: 1rem;
-    .heading{
+    .work-title>.heading{
         display: flex;
         align-items: center;
         .logo img{
@@ -706,6 +706,16 @@ input[type="text"]{
     }
 }
 
+.heading{
+    display: flex;
+    align-items: center;
+    .logo img{
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: 0.5rem;
+    }
+}
+
 .linux_contacts{
     ul{
         display: flex;
@@ -883,7 +893,7 @@ input[type="text"]{
         border-width: 0.1px;
         padding: 1rem;
         border: 1px solid #6f70732c;
-        .heading{
+        .work-title>.heading{
             display: flex;
             align-items: center;
             .logo img{
