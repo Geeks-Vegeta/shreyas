@@ -355,7 +355,6 @@ hr{
     }
 }
 
-
 .social-links{
     ul{
         list-style-type: none;
@@ -884,6 +883,15 @@ input[type="text"]{
         border-width: 0.1px;
         padding: 1rem;
         border: 1px solid #6f70732c;
+        .heading{
+            display: flex;
+            align-items: center;
+            .logo img{
+                width: 1.5rem;
+                height: 1.5rem;
+                margin-right: 0.5rem;
+            }
+        }
         .work-title, .work-year{
             margin-bottom: 3px;
         }

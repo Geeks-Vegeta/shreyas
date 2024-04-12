@@ -821,6 +821,15 @@ input[type=text] {
     padding: 1rem;
     border: 1px solid rgba(111, 112, 115, 0.1725490196);
   }
+  .experience-v1 .heading {
+    display: flex;
+    align-items: center;
+  }
+  .experience-v1 .heading .logo img {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+  }
   .experience-v1 .work-title, .experience-v1 .work-year {
     margin-bottom: 3px;
   }
