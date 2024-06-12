@@ -154,6 +154,10 @@ a[href] {
   font-style: normal;
 }
 
+.service {
+  margin-bottom: 1rem;
+}
+
 .img {
   width: 3rem;
   height: 3rem;
@@ -377,6 +381,48 @@ hr {
   margin-right: 1rem;
 }
 .side-projects .container p {
+  margin: 0.2rem 0rem;
+}
+
+.services {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  width: 25rem;
+  margin: 2rem;
+}
+.services .container {
+  margin: 1rem 0rem;
+  width: 25rem;
+  border-radius: 1rem;
+  border-width: 0.1px;
+  padding: 1rem;
+  border: 1px solid rgba(111, 112, 115, 0.1725490196);
+}
+.services .container .flex-container {
+  display: flex;
+  justify-content: space-around;
+}
+.services .container .flex-container .small-container {
+  cursor: pointer;
+  margin: 1rem 0rem;
+  width: 10rem;
+  border-radius: 1rem;
+  border-width: 0.1px;
+  padding: 1rem;
+  border: 1px solid rgba(111, 112, 115, 0.1725490196);
+}
+.services .container .flex-container .small-container a[href] {
+  text-decoration: none;
+}
+.services .container .flex-container .small-container span {
+  font-size: 12px;
+  margin: 1rem 0rem;
+}
+.services .container .flex-container .small-container .service-details {
+  font-size: 10px;
+}
+.services .container p {
   margin: 0.2rem 0rem;
 }
 
@@ -849,6 +895,47 @@ input[type=text] {
   .experience-v1 .hyper-line {
     margin: 10px 0px;
     border-color: rgba(111, 112, 115, 0.3843137255);
+  }
+  .services {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    width: 22rem;
+    margin: 2rem;
+  }
+  .services .container {
+    margin: 1rem 0rem;
+    width: 22rem;
+    border-radius: 1rem;
+    border-width: 0.1px;
+    padding: 1rem;
+    border: 1px solid rgba(111, 112, 115, 0.1725490196);
+  }
+  .services .container .flex-container {
+    display: flex;
+    justify-content: space-around;
+  }
+  .services .container .flex-container .small-container {
+    cursor: pointer;
+    margin: 1rem 0rem;
+    width: 9.5rem;
+    border-radius: 1rem;
+    border-width: 0.1px;
+    padding: 1rem;
+    border: 1px solid rgba(111, 112, 115, 0.1725490196);
+  }
+  .services .container .flex-container .small-container a[href] {
+    text-decoration: none;
+  }
+  .services .container .flex-container .small-container span {
+    font-size: 12px;
+    margin: 1rem 0rem;
+  }
+  .services .container .flex-container .small-container .service-details {
+    font-size: 10px;
+  }
+  .services .container p {
+    margin: 0.2rem 0rem;
   }
   .side-projects {
     font-family: "Inter", sans-serif;
