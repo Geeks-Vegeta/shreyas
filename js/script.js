@@ -16,7 +16,8 @@ const projects_content = [
   },
   {
     title: "Quote App",
-    description: "A quote application offers inspiring, motivational, or thought-provoking quotes, often categorized, to uplift and engage users' spirits daily.",
+    description:
+      "A quote application offers inspiring, motivational, or thought-provoking quotes, often categorized, to uplift and engage users' spirits daily.",
     url: "https://quoteser.netlify.app/",
   },
 ];
@@ -103,11 +104,11 @@ document.getElementById("toggle").addEventListener("change", function () {
   if (this.checked) {
     page1.classList.remove("active");
     page2.classList.add("active");
-    modeText.innerText="Dev Mode";
+    modeText.innerText = "Dev Mode";
   } else {
     page1.classList.add("active");
     page2.classList.remove("active");
-    modeText.innerText="Testimonial";
+    modeText.innerText = "Testimonial";
   }
 });
 
@@ -116,19 +117,22 @@ body.addEventListener("mousedown", function (e) {
   return false;
 });
 
-function move(val) {
+function move() {
   let elem = document.getElementById("greenBar");
-  console.log(val);
-  let stepValue = val;
+  elem.style.width = "0%"; // Reset to 0%
+  elem.innerHTML = "0%"; // Reset displayed value
+  let stepValue = 0; // Start from 0
   let id = setInterval(frame, 400);
 
   function frame() {
-    if (stepValue == 100) {
+    if (stepValue >= 100) {
       clearInterval(id);
+      elem.style.width = "100%";
+      elem.innerHTML = "100%";
     } else {
-      elem.style.width = stepValue + 10 + "%";
-      elem.innerHTML = stepValue + 10 + "%";
-      stepValue = stepValue + 10;
+      stepValue += 10;
+      elem.style.width = stepValue + "%";
+      elem.innerHTML = stepValue + "%";
     }
   }
 }
@@ -456,14 +460,15 @@ node.addEventListener("keyup", function (event) {
 
           case "resume":
             c_div = document.createElement("div");
-            let popup = window.open("./public/SHREYAS_MOHITE_RESUME.pdf", "_blank");
-            if(popup===null){
-              alert("The pop-up was blocked. Please enable pop-ups for this site to access the content.")
+            let popup = window.open(
+              "./public/SHREYAS_MOHITE_RESUME.pdf",
+              "_blank"
+            );
+            if (popup === null) {
+              alert(
+                "The pop-up was blocked. Please enable pop-ups for this site to access the content."
+              );
             }
-            // let li_a = document.createElement("a");
-            // li_a.setAttribute("target", "_blank");
-            // li_a.setAttribute("href", "./public/SHREYAS_MOHITE_RESUME.pdf");
-            // li_a.click();
             new_div.appendChild(c_div);
             break;
           case "skills":
@@ -517,12 +522,12 @@ const showdata = () => {
   // Get the image and insert it inside the modal - use its "alt" text as a caption
   var img = document.getElementById("myImg");
   var modalImg = document.getElementById("img01");
-  let all_image = document.querySelectorAll("#img-meme");
-  all_image.forEach((e, idx) => {
-    e.addEventListener("click", function () {
+  let all_images = document.querySelectorAll("#img-meme");
+  all_images.forEach((e) => {
+    e.onclick = function () {
       modal.style.display = "block";
-      modalImg.src = e["src"];
-    });
+      modalImg.src = e.src;
+    };
   });
 };
 
