@@ -6,19 +6,19 @@ const projects_content = [
     title: "All In One App",
     description:
       "Here is a solution for getting all tools in one place - This tool contain all things including images. Generate/Decode QR Code Short URLs",
-    url: "https://aioapp.netlify.app/",
+    url: "https://weballinone.site/",
   },
   {
     title: "ColorPicker",
     description:
       "This tool is really great at for creating and getting color Palettes- Create Color Palettes. Getting top famous Color Palettes for artist and designer.",
-    url: "https://color-pickerio.netlify.app/",
+    url: "https://colorpickerllc.online/",
   },
   {
     title: "Quote App",
     description:
       "A quote application offers inspiring, motivational, or thought-provoking quotes, often categorized, to uplift and engage users' spirits daily.",
-    url: "https://quoteser.netlify.app/",
+    url: "https://quoteapp.online/",
   },
 ];
 
@@ -27,25 +27,13 @@ const experience_content = [
     title: "Senior Backend Developer (Jaaga.ai)",
     description:
       "Implement database solutions, managing data modeling, optimization, and integration with third-party services. Participate in code reviews, providing valuable feedback to team members to enhance overall code quality.",
-    url: "https://aioapp.netlify.app/",
+    url: "https://weballinone.site/",
   },
   {
     title: "Backend Developer (Stareoutgames)",
     description:
       "Collaborate closely with cross-functional teams including front-end developers, UI/UX designers, and product managers to understand requirements and deliver high-quality solutions..",
-    url: "https://color-pickerio.netlify.app/",
-  },
-  {
-    title: "Backend Developer (Meet)",
-    description:
-      "Collaborated with a cross-functional team to define project requirements, scope, and timelines. Implemented RESTful APIs, optimized database queries, and improved overall performance.",
-    url: "https://quoteser.netlify.app/",
-  },
-  {
-    title: "Backend Developer (SirpiDataScience)",
-    description:
-      "Deployed and managed multiple applications using different frameworks like Flask and Express. Building and managing restful API's for Fronted, Also worked in chat bot development process",
-    url: "https://quoteser.netlify.app/",
+    url: "https://colorpickerllc.online/",
   },
 ];
 
