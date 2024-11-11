@@ -1,4 +1,4 @@
-# shreyas Mohite Personal Site
+# Shreyas Mohite Personal Site
 
 It's an simple design which really attract people attention.
 
