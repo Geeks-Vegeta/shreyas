@@ -30,10 +30,22 @@ const experience_content = [
     url: "https://weballinone.site/",
   },
   {
-    title: "Backend Developer (Stareoutgames)",
+    title: "Backend Developer Intern (Stareoutgames)",
     description:
       "Collaborate closely with cross-functional teams including front-end developers, UI/UX designers, and product managers to understand requirements and deliver high-quality solutions..",
-    url: "https://colorpickerllc.online/",
+    url: "https://www.linkedin.com/company/stareout-games/",
+  },
+  {
+    title: "Backend Developer Intern (Meet)",
+    description:
+      "Collaborated with a cross-functional team to define project requirements, scope, and timelines.Implemented RESTful APIs, optimized database queries, and improved overall performance.",
+    url: "https://www.linkedin.com/company/meetworks/",
+  },
+  {
+    title: "Backend Developer Intern (SirpiDataScience)",
+    description:
+      "Deployed and managed multiple applications using different frameworks like Flask and Express. Building and managing restful API's for Fronted, Also worked in chat bot development process",
+    url: "https://www.linkedin.com/company/sirpidatascience/",
   },
 ];
 
