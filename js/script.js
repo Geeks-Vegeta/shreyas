@@ -537,3 +537,19 @@ var span = document.getElementsByClassName("close")[0];
 span.addEventListener("click", function () {
   modal.style.display = "none";
 });
+
+function trackUserVisits(displayElementId) {
+  let visits = localStorage.getItem("visits");
+  visits = visits ? parseInt(visits) + 1 : 1;
+  localStorage.setItem("visits", visits);
+
+  if (displayElementId) {
+    const displayElement = document.getElementById(displayElementId);
+    if (displayElement) {
+      displayElement.innerText = visits;
+    }
+  }
+}
+
+// Call it on page load
+trackUserVisits("your-visit-count-color");

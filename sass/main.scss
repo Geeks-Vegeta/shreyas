@@ -21,6 +21,31 @@ body{
     justify-content: flex-end;
     margin-top: 1rem;
 }
+
+.site-visit{
+    color: white;
+    font-size: 12px;
+    margin: 0.5rem 0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include page1-font;
+    p{
+        margin: 0rem 0.3rem;
+
+    }
+}
+
+.visit-count-color{
+    color: green;
+    animation: ascii-color 2s infinite;
+}
+
+#your-visit-count-color{
+    color: green;
+    animation: ascii-color 2s infinite;
+}
+
 .switch-mode{
     color: white;
     width: 22rem;
@@ -89,6 +114,11 @@ input[type="checkbox"] {
 }
 
 .fire-gif{
+    width: 25px;
+    height: 25px;
+}
+
+.cat-gif{
     width: 25px;
     height: 25px;
 
