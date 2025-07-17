@@ -23,7 +23,7 @@ body{
 }
 
 .site-visit{
-    color: white;
+    color: #6F7073;
     font-size: 12px;
     margin: 0.5rem 0rem;
     display: flex;
@@ -37,17 +37,15 @@ body{
 }
 
 .visit-count-color{
-    color: green;
-    animation: ascii-color 2s infinite;
+    color: $visit-count-color;
 }
 
 #your-visit-count-color{
-    color: green;
-    animation: ascii-color 2s infinite;
+    color: $visit-count-color;
 }
 
 .switch-mode{
-    color: white;
+    color: $white;
     width: 22rem;
     font-size: 8px;
     display: flex;
