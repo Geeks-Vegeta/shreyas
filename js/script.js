@@ -150,9 +150,9 @@ node.addEventListener("keydown", function (ed) {
     i = i - 1;
 
     if (node_value.length === 0 && i === -1) {
-      node.value = "show -n joke";
+      node.value = "joke --random";
     } else if (!node_value.at(i)) {
-      node.value = "show -n joke";
+      node.value = "joke --random";
       i = 0;
     } else {
       node.value = node_value.at(i);
@@ -162,15 +162,16 @@ node.addEventListener("keydown", function (ed) {
 
 node.addEventListener("keyup", function (event) {
   let command_list = [
-    "show -n joke",
+    "joke --random",
     "show contacts",
-    "cat projects.txt",
-    "show -n meme",
-    "quit",
+    "cat projects.md",
+    "meme --fetch",
+    "exit",
+    "clear",
     "cat about.txt",
-    "show resume",
-    "cat experiences.txt",
-    "cat skills.txt",
+    "open resume.pdf",
+    "cat experience.json",
+    "cat skills.yaml",
   ];
   let imgs = "";
   let sp = document.getElementById("sp");
@@ -185,7 +186,7 @@ node.addEventListener("keyup", function (event) {
       new_div.setAttribute("id", "cursor_ui");
 
       let top_span_green = document.createElement("span");
-      top_span_green.innerText = "shreyas@shreyas-Inspiron-15-3567";
+      top_span_green.innerText = "shreyas@developer";
       top_span_green.setAttribute("class", "green");
 
       let span_white_colon = document.createElement("span");
@@ -193,7 +194,7 @@ node.addEventListener("keyup", function (event) {
       span_white_colon.setAttribute("class", "white");
 
       let span_blue_colon = document.createElement("span");
-      span_blue_colon.innerText = "~/profile";
+      span_blue_colon.innerText = "~/portfolio";
       span_blue_colon.setAttribute("class", "blue");
 
       let span_white_dollar = document.createElement("span");
@@ -232,11 +233,11 @@ node.addEventListener("keyup", function (event) {
       switch (node.value) {
         case "cat about.txt":
           action = "about";
-          sp.innerHTML = "loading about please wait...";
+          sp.innerHTML = "📖 Loading about section...";
           write_punchline = "";
           break;
-        case "show -n joke":
-          sp.innerHTML = "New joke is arriving,please wait.";
+        case "joke --random":
+          sp.innerHTML = "😄 Fetching a fresh joke...";
 
           fetch(`https://joke.deno.dev/`)
             .then((data) => {
@@ -249,8 +250,8 @@ node.addEventListener("keyup", function (event) {
             });
           break;
 
-        case "show -n meme":
-          sp.innerHTML = "New meme is arriving,please wait.";
+        case "meme --fetch":
+          sp.innerHTML = "🎨 Fetching a dank meme...";
 
           fetch(`https://meme-api.com/gimme`)
             .then((data) => {
@@ -258,7 +259,7 @@ node.addEventListener("keyup", function (event) {
             })
             .then((actdata) => {
               if (actdata["code"] == 403) {
-                write_setup = "Image have private access,";
+                write_setup = "Image has private access,";
                 write_punchline = "please try again";
               } else {
                 action = "meme";
@@ -268,37 +269,39 @@ node.addEventListener("keyup", function (event) {
             });
           break;
 
-        case "quit":
+        case "exit":
+        case "clear":
           window.location.reload();
+          break;
 
-        case "cat projects.txt":
+        case "cat projects.md":
           action = "project";
-          sp.innerHTML = "loading projects,please wait.";
+          sp.innerHTML = "🚀 Loading projects...";
 
           break;
 
         case "show contacts":
           action = "contacts";
-          sp.innerHTML = "loading contacts,please wait.";
+          sp.innerHTML = "📧 Loading contacts...";
 
           break;
 
-        case "cat experiences.txt":
+        case "cat experience.json":
           action = "experience";
-          sp.innerHTML = "loading experience,please wait.";
+          sp.innerHTML = "💼 Loading experience...";
 
           break;
 
-        case "cat skills.txt":
+        case "cat skills.yaml":
           action = "skills";
-          sp.innerHTML = "loading skills,please wait.";
+          sp.innerHTML = "⚡ Loading skills...";
 
           break;
 
-        case "show resume":
+        case "open resume.pdf":
           action = "resume";
           sp.innerHTML =
-            "loading resume,please wait it will redirect you on new page.";
+            "📄 Opening resume... (redirecting to new page)";
 
           break;
 
@@ -324,7 +327,7 @@ node.addEventListener("keyup", function (event) {
         new_div.setAttribute("id", "cursor_ui");
 
         let top_span_green = document.createElement("span");
-        top_span_green.innerText = "shreyas@shreyas-Inspiron-15-3567";
+        top_span_green.innerText = "shreyas@developer";
         top_span_green.setAttribute("class", "green");
 
         let span_white_colon = document.createElement("span");
@@ -332,7 +335,7 @@ node.addEventListener("keyup", function (event) {
         span_white_colon.setAttribute("class", "white");
 
         let span_blue_colon = document.createElement("span");
-        span_blue_colon.innerText = "~/profile";
+        span_blue_colon.innerText = "~/portfolio";
         span_blue_colon.setAttribute("class", "blue");
 
         let span_white_dollar = document.createElement("span");

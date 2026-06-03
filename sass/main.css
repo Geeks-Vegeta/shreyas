@@ -491,102 +491,128 @@ hr {
 #page2 {
   margin: 3rem auto;
   width: 100%;
-  max-width: 900px;
+  max-width: 950px;
   padding: 0 2rem;
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Ubuntu Mono", "Ubuntu", "Courier New", monospace;
   font-optical-sizing: auto;
   font-style: normal;
 }
 
+.terminal-container {
+  background: linear-gradient(145deg, #1a1a1a 0%, #0d0d0d 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 
+              0 0 0 1px rgba(255, 255, 255, 0.05);
+  margin-bottom: 2rem;
+}
+
+.terminal-header {
+  background: linear-gradient(180deg, #2d2d2d 0%, #1f1f1f 100%);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.terminal-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.terminal-buttons span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.btn-close {
+  background: linear-gradient(135deg, #ff5f56 0%, #ff3b30 100%);
+  box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.3);
+}
+
+.btn-minimize {
+  background: linear-gradient(135deg, #ffbd2e 0%, #ffaa00 100%);
+  box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.3);
+}
+
+.btn-maximize {
+  background: linear-gradient(135deg, #27c93f 0%, #00d084 100%);
+  box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.3);
+}
+
+.terminal-title {
+  color: #8a8a8a;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.terminal-body {
+  padding: 24px;
+  background: #0a0a0a;
+  min-height: 400px;
+}
+
 @keyframes spinner-s {
   0% {
-    background-color: aqua;
-    transform: rotate(10deg);
+    background: linear-gradient(90deg, #00d4ff, #00ffaa);
+    transform: rotate(0deg);
   }
-  10% {
-    background-color: blue;
-    transform: rotate(40deg);
-  }
-  20% {
-    background-color: rgb(168, 26, 156);
-    transform: rotate(70deg);
-  }
-  30% {
-    background-color: rgb(113, 223, 195);
-    transform: rotate(-70deg);
-  }
-  40% {
-    background-color: rgb(13, 38, 66);
-    transform: rotate(-20deg);
-  }
-  50% {
-    background-color: rgb(255, 38, 0);
-    transform: rotate(50deg);
-  }
-  60% {
-    background-color: rgb(231, 255, 15);
+  25% {
+    background: linear-gradient(90deg, #00ffaa, #ff00ff);
     transform: rotate(90deg);
   }
-  70% {
-    background-color: rgb(190, 113, 241);
-    transform: rotate(-50deg);
+  50% {
+    background: linear-gradient(90deg, #ff00ff, #ffaa00);
+    transform: rotate(180deg);
   }
-  80% {
-    background-color: rgb(27, 179, 218);
-    transform: rotate(-90deg);
-  }
-  90% {
-    background-color: rgb(150, 21, 27);
-    transform: rotate(-30deg);
+  75% {
+    background: linear-gradient(90deg, #ffaa00, #00d4ff);
+    transform: rotate(270deg);
   }
   100% {
-    background-color: rgb(75, 236, 169);
-    transform: rotate(-10deg);
+    background: linear-gradient(90deg, #00d4ff, #00ffaa);
+    transform: rotate(360deg);
   }
 }
+
 @keyframes ascii-color {
-  0% {
-    color: aqua;
+  0%, 100% {
+    color: #00ff88;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
   }
-  10% {
-    color: rgb(30, 78, 78);
-  }
-  20% {
-    color: rgba(0, 255, 136, 0.76);
-  }
-  30% {
-    color: rgb(131, 1, 1);
-  }
-  40% {
-    color: rgb(19, 147, 170);
+  25% {
+    color: #00d4ff;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
   }
   50% {
-    color: rgb(247, 200, 71);
+    color: #ff00ff;
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
   }
-  60% {
-    color: rgba(20, 194, 78, 0.651);
-  }
-  70% {
-    color: rgb(93, 240, 93);
-  }
-  80% {
-    color: rgb(32, 1, 18);
-  }
-  90% {
-    color: rgb(190, 5, 113);
-  }
-  100% {
-    color: blue;
+  75% {
+    color: #ffaa00;
+    text-shadow: 0 0 10px rgba(255, 170, 0, 0.5);
   }
 }
 .red {
-  color: red;
+  color: #ff6b6b;
+}
+
+.success {
+  color: #51cf66;
 }
 
 #linux-ui {
-  margin: 1rem;
+  margin: 1.5rem 0;
   display: block;
   cursor: default;
+  padding: 16px;
+  background: rgba(0, 255, 136, 0.03);
+  border-radius: 8px;
+  border-left: 3px solid #00ff88;
 }
 
 #linux-ui #cursor_ui {
@@ -606,73 +632,133 @@ hr {
 }
 
 .sample-cursor {
-  margin: 1rem;
-  background-color: #919191;
+  margin: 1.2rem 0;
+  padding: 12px 0;
+  background-color: transparent;
+  transition: all 0.2s ease;
+}
+
+.sample-cursor:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+  border-radius: 4px;
 }
 
 #cursor_ui {
-  font-size: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
   max-height: 40rem;
   min-height: 1rem;
+  letter-spacing: 0.3px;
 }
+
 #cursor_ui .green {
-  color: rgb(4, 223, 4);
+  color: #51cf66;
+  font-weight: 600;
 }
+
 #cursor_ui .white {
-  color: white;
+  color: #e0e0e0;
 }
+
 #cursor_ui .blue {
-  color: rgb(0, 183, 255);
+  color: #4dabf7;
+  font-weight: 600;
+}
+
+#cursor_ui p {
+  margin: 4px 0;
+  padding-left: 0;
 }
 
 pre {
-  width: 10rem;
+  width: 100%;
+  overflow-x: auto;
 }
 
 .accii {
-  animation: ascii-color 2s infinite;
+  animation: ascii-color 4s ease-in-out infinite;
+  font-weight: bold;
+  font-size: 0.85rem;
+  line-height: 1.2;
+  margin: 1.5rem 0;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 255, 136, 0.2);
 }
 
 .commands {
-  margin: 1rem;
+  margin: 1.5rem 0;
   color: white;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .commands-heading {
-  font-size: 1rem;
-  font-weight: 1000;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #00ff88;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
 }
 
 .list {
-  margin: 1rem 1rem;
-  width: 25rem;
+  margin: 0;
+  width: 100%;
+  max-width: 600px;
 }
 
 .comm {
   display: flex;
   justify-content: space-between;
-  font-size: 1rem;
-  font-weight: 300;
+  font-size: 0.9rem;
+  font-weight: 400;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.2s ease;
+}
+
+.comm:hover {
+  background: rgba(0, 255, 136, 0.05);
+  padding-left: 8px;
+  border-left: 2px solid #00ff88;
+}
+
+.comm:last-child {
+  border-bottom: none;
+}
+
+.cmd-name {
+  color: #ffd43b;
+  font-family: "Ubuntu Mono", monospace;
+  font-weight: 600;
 }
 
 .command-desc {
-  color: aqua;
-  width: 12rem;
-}
-
-#cursor_ui {
-  max-height: 40rem;
-  min-height: 1rem;
+  color: #9ca3af;
+  width: auto;
+  text-align: right;
+  font-size: 0.85rem;
 }
 
 .red {
-  color: red;
+  color: #ff6b6b;
 }
 
 .joke {
-  max-height: 10rem;
-  width: 30rem;
-  color: white;
+  max-height: auto;
+  width: 100%;
+  max-width: 600px;
+  color: #e0e0e0;
+  padding: 16px;
+  background: rgba(255, 215, 0, 0.05);
+  border-left: 3px solid #ffd43b;
+  border-radius: 6px;
+  margin: 1rem 0;
+  line-height: 1.6;
+  font-size: 0.95rem;
 }
 
 .spinner-line {
@@ -687,38 +773,57 @@ pre {
 }
 
 .progressbarWrapper {
-  height: 20px;
-  width: 300px;
-  max-width: 80%;
+  height: 24px;
+  width: 350px;
+  max-width: 90%;
   display: block;
-  background: transparent;
-  padding: 3px;
-  box-shadow: inset 0 -1px 1px transparent;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 4px;
+  border-radius: 12px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin: 1rem 0;
 }
 
 #greenBar {
   display: block;
   height: 100%;
   width: 0px;
-  background-color: rgb(43, 194, 83);
-  background-image: linear-gradient(center bottom, rgb(43, 194, 83) 37%, rgb(84, 240, 84) 69%);
+  background: linear-gradient(90deg, #00ff88 0%, #00d4ff 100%);
   position: relative;
   overflow: hidden;
-  font-size: 15px;
+  font-size: 13px;
   text-align: center;
   color: white;
   transition: all 700ms ease;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
 }
 
 .spinner {
   display: flex;
   display: none;
+  align-items: center;
+  padding: 12px;
+  background: rgba(0, 212, 255, 0.05);
+  border-radius: 6px;
+  margin: 1rem 0;
 }
 
 .sp {
-  margin: 0 0.5rem;
-  font-size: 1rem;
-  color: rgb(239, 245, 245);
+  margin: 0 0.8rem;
+  font-size: 0.95rem;
+  color: #00d4ff;
+  font-weight: 500;
+}
+
+.spinner-line {
+  width: 3px;
+  margin: 0rem 1rem;
+  height: 1.6rem;
+  padding: 1px;
+  border-radius: 2px;
+  color: aliceblue;
+  animation: spinner-s 1s infinite linear;
 }
 
 .linux-text {
@@ -727,45 +832,84 @@ pre {
   min-width: 150px;
   max-width: calc(100% - 300px);
   flex: 1;
-  padding: 0;
+  padding: 4px 8px;
   margin: 0;
   outline: none;
   border: none;
   background-color: transparent;
-  color: white;
-  font-size: 1rem;
+  color: #e0e0e0;
+  font-size: 0.95rem;
+  font-family: "Ubuntu Mono", "Ubuntu", monospace;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   vertical-align: baseline;
   cursor: text;
+  letter-spacing: 0.3px;
 }
 
 .linux-text:focus {
   cursor: text;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 4px;
+}
+
+.linux-text::placeholder {
+  color: #6c757d;
+  opacity: 0.6;
 }
 
 input {
-  caret-color: rgb(32, 216, 185);
+  caret-color: #00ff88;
 }
 
 input[type=text] {
-  color: rgb(255, 255, 255);
+  color: #e0e0e0;
 }
 
 .img-meme {
   cursor: pointer;
-  width: 15rem;
-  height: 10rem;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  border: 2px solid rgba(0, 255, 136, 0.3);
+  transition: all 0.3s ease;
+}
+
+.img-meme:hover {
+  transform: scale(1.02);
+  border-color: #00ff88;
+  box-shadow: 0 8px 24px rgba(0, 255, 136, 0.3);
 }
 
 .files ul {
   display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 12px 0;
 }
+
 .files li {
-  margin: 0rem 1rem;
   list-style-type: none;
-  color: rgb(152, 48, 218);
+  color: #a78bfa;
+  font-weight: 500;
+  padding: 8px 12px;
+  background: rgba(167, 139, 250, 0.1);
+  border-radius: 6px;
+  border: 1px solid rgba(167, 139, 250, 0.2);
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.files li:hover {
+  background: rgba(167, 139, 250, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(167, 139, 250, 0.3);
+}
+
+.file-icon {
+  margin-right: 6px;
 }
 
 .heading {
@@ -780,17 +924,29 @@ input[type=text] {
 
 .linux_contacts ul {
   display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
+
 .linux_contacts li a[href] {
   text-decoration: none;
-  margin: 0rem 1rem;
+  padding: 8px 16px;
   list-style-type: none;
-  color: rgb(119, 103, 212);
+  color: #748ffc;
   cursor: pointer;
+  border: 1px solid rgba(116, 143, 252, 0.3);
+  border-radius: 6px;
+  background: rgba(116, 143, 252, 0.05);
+  transition: all 0.2s ease;
+  display: inline-block;
 }
+
 .linux_contacts li a[href]:hover {
-  color: rgb(228, 217, 235);
-  text-decoration: underline;
+  color: #ffffff;
+  background: rgba(116, 143, 252, 0.15);
+  border-color: #748ffc;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(116, 143, 252, 0.3);
 }
 
 .linux_skills {
@@ -1132,33 +1288,103 @@ input[type=text] {
     padding: 0 1rem;
     margin: 2rem auto;
   }
+  
+  .terminal-container {
+    border-radius: 8px;
+  }
+  
+  .terminal-header {
+    padding: 10px 12px;
+  }
+  
+  .terminal-buttons span {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .terminal-title {
+    font-size: 11px;
+  }
+  
+  .terminal-body {
+    padding: 16px;
+  }
+  
   .sample-cursor {
-    margin: 0.5rem;
+    margin: 0.8rem 0;
   }
+  
   #cursor_ui {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
+  
+  #cursor_ui .green,
+  #cursor_ui .blue {
+    font-size: 0.75rem;
+  }
+  
   .commands {
     font-size: 0.85rem;
+    padding: 16px;
   }
+  
+  .commands-heading {
+    font-size: 1rem;
+  }
+  
+  .comm {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .command-desc {
+    text-align: left;
+    font-size: 0.8rem;
+  }
+  
   .accii {
-    font-size: 0.4rem;
+    font-size: 0.45rem;
     width: 100%;
     overflow-x: auto;
+    padding: 12px;
   }
+  
   .linux-text {
     width: auto;
     min-width: 100px;
-    max-width: calc(100% - 200px);
-    font-size: 1rem;
-    padding: 0;
+    max-width: calc(100% - 150px);
+    font-size: 0.85rem;
+    padding: 2px 4px;
     touch-action: manipulation;
   }
+  
   #linux-ui {
-    margin: 0.5rem;
+    margin: 1rem 0;
+    padding: 12px;
     width: 100%;
   }
+  
   #linux-ui #cursor_ui {
     flex-wrap: wrap;
+  }
+  
+  .files ul {
+    gap: 12px;
+  }
+  
+  .files li {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+  
+  .joke {
+    padding: 12px;
+    font-size: 0.85rem;
+    max-width: 100%;
+  }
+  
+  .progressbarWrapper {
+    width: 100%;
+    max-width: 100%;
   }
 }/*# sourceMappingURL=main.css.map */

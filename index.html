@@ -563,42 +563,58 @@
     </div>
 
     <div id="page2" class="page">
-
-        <div class="sample-cursor">
-            <div id="cursor_ui">
-                <span class="green">shreyas@shreyas-Inspiron-15-3567</span><span class="white">:</span><span
-                    class="blue">~</span><span class="white">$</span>
-                <span class="white">sudo apt-get install shreyas-profile </span>
-                <p class="white">[sudo] password for shreyas: </p>
-                <p class="white">Reading packages list... Done </p>
-                <p class="white">Building dependency tree </p>
-                <p class="white">Reading state information... Done </p>
-                <p class="white">shreyas-profile is already the newest version (3.0) </p>
-                <p class="white">0 upgraded, 0 newly installed, 0 to remove, 0 not to upgraded </p>
-
-
-
+        <div class="terminal-container">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <span class="btn-close"></span>
+                    <span class="btn-minimize"></span>
+                    <span class="btn-maximize"></span>
+                </div>
+                <div class="terminal-title">shreyas@developer: ~/portfolio</div>
             </div>
-        </div>
+            
+            <div class="terminal-body">
+                <div class="sample-cursor">
+                    <div id="cursor_ui">
+                        <span class="green">shreyas@developer</span><span class="white">:</span><span
+                            class="blue">~</span><span class="white">$</span>
+                        <span class="white">npm install --global @shreyas/portfolio</span>
+                        <p class="white">📦 Installing shreyas-portfolio@3.0.0</p>
+                        <p class="white">✓ Fetching packages... </p>
+                        <p class="white">✓ Building dependencies... </p>
+                        <p class="white">✓ Linking binaries... </p>
+                        <p class="success">✓ Successfully installed! Ready to explore.</p>
+                    </div>
+                </div>
 
-        <div class="sample-cursor">
-            <div id="cursor_ui">
-                <span class="green">shreyas@shreyas-Inspiron-15-3567</span><span class="white">:</span><span
-                    class="blue">~</span><span class="white">$</span>
-                <span class="white">cd profile </span>
-            </div>
-        </div>
+                <div class="sample-cursor">
+                    <div id="cursor_ui">
+                        <span class="green">shreyas@developer</span><span class="white">:</span><span
+                            class="blue">~</span><span class="white">$</span>
+                        <span class="white">cd portfolio && ls -la</span>
+                    </div>
+                </div>
 
+                <div class="sample-cursor">
+                    <div class="files">
+                        <ul>
+                            <li><span class="file-icon">📄</span> about.txt</li>
+                            <li><span class="file-icon">💼</span> experience.json</li>
+                            <li><span class="file-icon">⚡</span> skills.yaml</li>
+                            <li><span class="file-icon">🚀</span> projects.md</li>
+                        </ul>
+                    </div>
+                </div>
 
-        <div class="sample-cursor">
-            <div id="cursor_ui">
-                <span class="green">shreyas@shreyas-Inspiron-15-3567</span><span class="white">:</span><span
-                    class="blue">~/profile</span><span class="white">$</span>
-                <span class="white">ascii-art -w "HIRE ME" </span>
-                <p class="white">loading art please wait...</p>
-            </div>
-        </div>
-        <pre class="accii">
+                <div class="sample-cursor">
+                    <div id="cursor_ui">
+                        <span class="green">shreyas@developer</span><span class="white">:</span><span
+                            class="blue">~/portfolio</span><span class="white">$</span>
+                        <span class="white">figlet "HIRE ME"</span>
+                        <p class="white">🎨 Generating ASCII art...</p>
+                    </div>
+                </div>
+                <pre class="accii">
 
 
 
@@ -668,50 +684,42 @@
 
         <div class="sample-cursor">
             <div id="cursor_ui">
-                <span class="green">shreyas@shreyas-Inspiron-15-3567</span><span class="white">:</span><span
-                    class="blue">~/profile</span><span class="white">$</span>
-                <span class="white">
-                    help
-                </span>
+                <span class="green">shreyas@developer</span><span class="white">:</span><span
+                    class="blue">~/portfolio</span><span class="white">$</span>
+                <span class="white">help --all</span>
             </div>
         </div>
 
         <div class="commands">
-            <p class="commands-heading">Commands</p>
+            <p class="commands-heading">📖 Available Commands</p>
             <div class="list">
-                <p class="comm"> <span class="red">cat about.txt</span> <span class="command-desc"> return about
-                        me</span> </p>
-                <p class="comm"><span class="red">cat experiences.txt</span> <span class="command-desc"> return
-                        experience</span></p>
-                <p class="comm"><span class="red">cat skills.txt</span> <span class="command-desc"> return skills</span>
+                <p class="comm"> <span class="cmd-name">cat about.txt</span> <span class="command-desc">Display my background & bio</span> </p>
+                <p class="comm"><span class="cmd-name">cat experience.json</span> <span class="command-desc">Show work history</span></p>
+                <p class="comm"><span class="cmd-name">cat skills.yaml</span> <span class="command-desc">List technical skills</span>
                 </p>
-                <p class="comm"><span class="red">cat projects.txt</span> <span class="command-desc"> return
-                        projects</span></p>
-                <p class="comm"><span class="red">show resume</span> <span class="command-desc"> return resume</span>
+                <p class="comm"><span class="cmd-name">cat projects.md</span> <span class="command-desc">View side projects</span></p>
+                <p class="comm"><span class="cmd-name">open resume.pdf</span> <span class="command-desc">Download resume</span>
                 </p>
-                <p class="comm"><span class="red">show contacts</span> <span class="command-desc"> return all
-                        contact</span></p>
-                <p class="comm"> <span class="red">show -n joke</span> <span class="command-desc"> return text new
-                        jokes</span> </p>
-                <p class="comm"><span class="red">show -n meme</span> <span class="command-desc"> return new meme
-                        image</span></p>
-                <p class="comm"><span class="red">quit</span> <span class="command-desc"> exits this screen</span></p>
+                <p class="comm"><span class="cmd-name">show contacts</span> <span class="command-desc">Display contact info</span></p>
+                <p class="comm"> <span class="cmd-name">joke --random</span> <span class="command-desc">Get a dev joke</span> </p>
+                <p class="comm"><span class="cmd-name">meme --fetch</span> <span class="command-desc">Fetch random meme</span></p>
+                <p class="comm"><span class="cmd-name">clear</span> <span class="command-desc">Clear terminal</span></p>
+                <p class="comm"><span class="cmd-name">exit</span> <span class="command-desc">Return to main view</span></p>
 
             </div>
 
         </div>
         <div id="linux-ui">
             <div id="cursor_ui">
-                <span class="green">shreyas@shreyas-Inspiron-15-3567</span><span class="white">:</span><span
-                    class="blue">~/profile</span><span class="white">$</span>
+                <span class="green">shreyas@developer</span><span class="white">:</span><span
+                    class="blue">~/portfolio</span><span class="white">$</span>
                 <span>
-                    <input class="linux-text" id="linux-text" type="text" autofocus>
+                    <input class="linux-text" id="linux-text" type="text" autofocus placeholder="Type a command...">
                 </span>
             </div>
             <div class="joke"></div>
-            <!-- <div class="experience-projects"></div> -->
             <div id="spinner" class="spinner">
-                <span id="sp" class="sp">featching new things.</span>
+                <span id="sp" class="sp">⏳ Loading awesome content...</span>
                 <div class="spinner-line"></div>
             </div>
             <div id="progressbarWrapper" class="progressbarWrapper">
@@ -723,6 +731,8 @@
             <img class="modal-content" id="img01" alt="img01">
         </div>
 
+            </div>
+        </div>
 
     </div>
     <script src="./js/script.js"></script>
