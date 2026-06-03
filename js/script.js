@@ -105,6 +105,10 @@ document.getElementById("toggle").addEventListener("change", function () {
     page1.classList.remove("active");
     page2.classList.add("active");
     modeText.innerText = "Dev Mode";
+    // Focus on the terminal input when switching to dev mode
+    setTimeout(function() {
+      document.getElementById("linux-text").focus();
+    }, 100);
   } else {
     page1.classList.add("active");
     page2.classList.remove("active");

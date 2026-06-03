@@ -618,7 +618,24 @@ hr{
 
 #linux-ui{
     margin: 1rem;
+    display: block;
+    cursor: default;
+}
 
+#linux-ui #cursor_ui {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#linux-ui #cursor_ui > span {
+    display: inline;
+}
+
+#linux-ui #cursor_ui > span:last-of-type {
+    display: inline-flex;
+    flex: 1;
+    min-width: 150px;
 }
 
 .sample-cursor{
@@ -753,14 +770,27 @@ pre{
 
 
 .linux-text{
-    width: 10rem ;
-    padding: 0.5rem;
+    display: inline-block;
+    width: auto;
+    min-width: 150px;
+    max-width: calc(100% - 300px);
+    flex: 1;
+    padding: 0;
+    margin: 0;
     outline: none;
     border: none;
     background-color: transparent;
     color: $white;
     font-size: 1rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    vertical-align: baseline;
+    cursor: text;
+}
 
+.linux-text:focus {
+    cursor: text;
 }
 
 input {
@@ -1177,5 +1207,23 @@ input[type="text"]{
         font-size: 0.4rem;
         width: 100%;
         overflow-x: auto;
+    }
+
+    .linux-text {
+        width: auto;
+        min-width: 100px;
+        max-width: calc(100% - 200px);
+        font-size: 1rem;
+        padding: 0;
+        touch-action: manipulation;
+    }
+
+    #linux-ui {
+        margin: 0.5rem;
+        width: 100%;
+    }
+
+    #linux-ui #cursor_ui {
+        flex-wrap: wrap;
     }
   }
