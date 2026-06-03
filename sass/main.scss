@@ -177,7 +177,9 @@ a[href]{
     overflow: hidden;
     position: relative;
     width: 100%;
-    padding: 1rem 0rem
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
   }
   
   .about{
@@ -506,8 +508,10 @@ hr{
 /* page 2 */
 
 #page2{
-    margin: 3rem 0rem;
-    width: 50rem;
+    margin: 3rem auto;
+    width: 100%;
+    max-width: 900px;
+    padding: 0 2rem;
     @include page2-font;
 }
 
@@ -934,6 +938,11 @@ input[type="text"]{
 /* For mobile devices and tablets */
 @media only screen and (max-width: 1023px) {
 
+    .css-g0ck5h {
+        max-width: 100%;
+        padding: 1rem;
+    }
+
     .profile-name{
         width: 22rem;
         display: flex;
@@ -1144,5 +1153,29 @@ input[type="text"]{
     .footer-ending{
         @include page1-font;
         font-size: x-small;
+    }
+
+    #page2 {
+        max-width: 100%;
+        padding: 0 1rem;
+        margin: 2rem auto;
+    }
+
+    .sample-cursor {
+        margin: 0.5rem;
+    }
+
+    #cursor_ui {
+        font-size: 0.85rem;
+    }
+
+    .commands {
+        font-size: 0.85rem;
+    }
+
+    .accii {
+        font-size: 0.4rem;
+        width: 100%;
+        overflow-x: auto;
     }
   }
